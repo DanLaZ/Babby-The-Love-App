@@ -20,7 +20,8 @@
     <!----------->
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
-
+    <!--Animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
     <title>Babby Love</title>
 </head>
@@ -33,12 +34,16 @@
 
         <!--Title Section-->
         <div class="div2">
-            <div id="heart_eyes">😍😍😍😍😍😍😍😍😍😍😍😍😍😍😍😍</div> 
+            <div id="heart_eyes">😍😍😍😍😍😍😍😍😍😍😍😍😍😍😍</div> 
             <h1 id="babby_header">The Babby Love App</h1>
 
             <div id="dump"></div>
 
-            <div id="heart_face">🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰</div>
+            <div id="heart_face">🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰🥰</div>
+
+            <!--Love Note Window-->
+            <div id="love-window"></div>
+
         </div>
 
         <div class="div3"> 
@@ -50,8 +55,8 @@
         <!--Main Heart Section-->
         <div class="div5" id="root">
             
-            
-            <div id="heart">🧡</div>
+            <button id="heart" class="animated infinite fast pulse" type="button">🧡</button>
+            <h2 id="tap-styles-h2">Tap Me</h2>
         </div>
 
         <div class="div6"> </div>
@@ -59,13 +64,38 @@
         <div class="div7"> </div>
 
         <!--Heart Colors Section-->
-        <div class="div8"> </div>
+        <div class="div8"> 
+
+            <ul>
+                <li class="picked-heart">
+                    <label for="red-heart">❤️</label>
+                    <input class="heart-selection" id="red-heart" type="radio" name="heart" value="red">
+                </li>
+                <li class="picked-heart">
+                    <label for="orange-heart">🧡</label>
+                    <input class="heart-selection" id="orange-heart" type="radio" name="heart" value="orange">
+                </li>
+                <li class="picked-heart">
+                    <label for="yellow-heart">💛</label>
+                    <input class="heart-selection" id="yellow-heart" type="radio" name="heart" value="yellow">
+                </li>
+                <li class="picked-heart">
+                    <label for="blue-heart">💙</label>
+                    <input class="heart-selection" id="blue-heart" type="radio" name="heart" value="blue">
+                </li>
+                <li class="picked-heart">
+                    <label for="green-heart">💚</label>
+                    <input class="heart-selection" id="green-heart" type="radio" name="heart" value="green">
+                </li> 
+            </ul>
+            
+        </div>
 
         <div class="div9"> </div>
     </div>
 
 
-    <script src="myscripts.js"></script>
+    <script src="assets/js/app.js"></script>
 
 </body>
 </html>
