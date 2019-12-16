@@ -12,15 +12,15 @@ const heartClick = (e) => {
         picked_heart[i].classList.add('animated', 'bounce');
         console.log('I ran');
     }
-    e.preventDefault();
+    // e.preventDefault();
 }
 
 
 // picked_heart.className = 'animated bounce infinite';
 
-heartClick();
+// heartClick();
 
-console.log(picked_heart);
+// console.log(picked_heart);
 
 // Love Data
 
@@ -31,8 +31,27 @@ const danQuotes = ['I love you my coconut caramel honey bun with sprinkes and co
 const emojiArr = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🖤', '♥️', '🥰', '😘', '😗', '😊', '😍', '💓', '💗', '💘', '💖', '💕'];
 
 console.log('===============');
-console.log(danQuotes);
+console.log('Random Array Sort');
 console.log('===============');
 
 
+//Array Randomizer
 
+const randomLoveQuotes = (randomArr) => 
+{
+    let random = Math.random();
+    let totalArr = randomArr.length;
+    let randomIndex = Math.floor( random * totalArr);
+    let randomMessage = randomArr[randomIndex];
+
+    console.log(randomMessage);
+
+}
+
+const randomArrCaller = [
+    randomLoveQuotes(loveQuotes),
+    randomLoveQuotes(danQuotes),
+    randomLoveQuotes(emojiArr)
+];
+
+randomLoveQuotes(randomArrCaller.length);
