@@ -14,14 +14,38 @@ const emojiArr = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🖤', '♥
 const picked_heart = document.querySelectorAll('.picked-heart');
 
 
+
+
 // On click Function for selecting a heart color
 const heartClick = (e) => {
     for (let i = 0; i < picked_heart.length; i++) {
         picked_heart[i].classList.add('animated', 'bounce');
         console.log('I ran');
     }
-    // e.preventDefault();
+    e.preventDefault();
 }
+
+const clickCaught = (e) => {
+    console.log('I was clicked');
+    e.preventDefault();
+}
+
+// Hard code for selecting heart color
+const red_heart = document.querySelector('#red-heart');
+red_heart.addEventListener('click', clickCaught);
+
+const orange_heart = document.querySelector('#orange-heart');
+orange_heart.addEventListener('click', clickCaught);
+
+const yellow_heart = document.querySelector('#yellow-heart');
+yellow_heart.addEventListener('click', clickCaught);
+
+const blue_heart = document.querySelector('#blue-heart');
+blue_heart.addEventListener('click', clickCaught);
+
+const green_heart = document.querySelector('#green-heart');
+green_heart.addEventListener('click', clickCaught);
+
 
 
 // picked_heart.className = 'animated bounce infinite';
