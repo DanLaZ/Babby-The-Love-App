@@ -18,16 +18,20 @@ const picked_heart = document.querySelectorAll('.picked-heart');
 
 // On click Function for selecting a heart color
 const heartClick = (e) => {
+    e.preventDefault();
+
     for (let i = 0; i < picked_heart.length; i++) {
         picked_heart[i].classList.add('animated', 'bounce');
         console.log('I ran');
     }
-    e.preventDefault();
+    
 }
 
 const clickCaught = (e) => {
-    console.log('I was clicked');
     e.preventDefault();
+
+    console.log('I\'m the heart selector');
+    
 }
 
 // Hard code for selecting heart color
@@ -77,15 +81,31 @@ const randomLoveQuotes = (randomArr) => {
     let totalArr = randomArr.length;
     let randomIndex = Math.floor( random * totalArr);
     let randomMessage = randomArr[randomIndex];
+    randomArr = randomArrParam;
 
     console.log(randomMessage);
+    return randomMessage;
 }
 
 // eval turns the string into the array name rather than the string version of it
 console.log('=================');
+// randomLoveQuotes(eval(randomArrParam));
 randomLoveQuotes(eval(randomArrParam));
 console.log('=================');
 
 /*************************/
+
+
+
+/**************/
+//Click Handler for heart button
+const displayLoveQuote = (e) => {
+    console.log('I\'m the heart button');
+    e.preventDefault();
+}
+
+const heart_button = document.querySelector('#heart');
+heart_button.addEventListener('click', displayLoveQuote);
+
 
 
