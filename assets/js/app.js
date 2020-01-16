@@ -11,10 +11,9 @@ const emojiArr = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🖤', '♥
 // const picked_heart = document.querySelector('li.picked-heart');
 // picked_heart.className = 'animated bounce infinite';
 
+
+
 const picked_heart = document.querySelectorAll('.picked-heart');
-
-
-
 
 // On click Function for selecting a heart color
 const heartClick = (e) => {
@@ -33,6 +32,8 @@ const clickCaught = (e) => {
     console.log('I\'m the heart selector');
     
 }
+
+
 
 // Hard code for selecting heart color
 const red_heart = document.querySelector('#red-heart');
@@ -76,6 +77,9 @@ console.log('I\'m the random param');
 console.log(randomArrParam);
 console.log('=================');
 
+// const love_window = document.querySelector('#love-window');
+// const lovePtag = document.createElement('p');
+
 //This Function gives a random index from any array.
 const randomLoveQuotes = (randomArr) => {
     let totalArr = randomArr.length;
@@ -84,14 +88,43 @@ const randomLoveQuotes = (randomArr) => {
     randomArr = randomArrParam;
 
     console.log(randomMessage);
-    return randomMessage;
+
+    //Creating dynamic elememts for love quotes
+    const love_window = document.querySelector('#love-window');
+    const lovePtag = document.createElement('p');
+    lovePtag.className = 'loveQuoteDump';
+    lovePtag.id = 'quoteDrop';
+    
+    lovePtag.appendChild(document.createTextNode(randomMessage));
+    
+    love_window.appendChild(lovePtag);
+    
+    
+    // love_window.appendChild(document.createTextNode(randomMessage));
 }
 
 // eval turns the string into the array name rather than the string version of it
 console.log('=================');
 // randomLoveQuotes(eval(randomArrParam));
-randomLoveQuotes(eval(randomArrParam));
+// randomLoveQuotes(eval(randomArrParam));
 console.log('=================');
+
+
+
+
+const loveQuoteAppend = (e) => {
+    e.preventDefault();
+    
+    randomLoveQuotes(eval(randomArrParam));
+    console.log('I\'m the heart button click');
+
+    //Creating dynamic elememts for love quotes
+
+    // const lovePtag = document.createElement('p');
+    // lovePtag.className = 'loveQuoteDump';
+    // lovePtag.id = 'quoteDrop';
+    // lovePtag.appendChild(document.createTextNode(randomMessage));
+}
 
 /*************************/
 
@@ -105,7 +138,9 @@ const displayLoveQuote = (e) => {
 }
 
 const heart_button = document.querySelector('#heart');
-heart_button.addEventListener('click', displayLoveQuote);
+heart_button.addEventListener('click', loveQuoteAppend);
+
+
 
 
 
