@@ -8,17 +8,16 @@ const emojiArr = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🖤', '♥
 
 /*************************/
 
-// const picked_heart = document.querySelector('li.picked-heart');
-// picked_heart.className = 'animated bounce infinite';
 
+const picked_heart = document.querySelectorAll('ul.heart-choices li.picked-heart');
 
-
-const picked_heart = document.querySelectorAll('.picked-heart');
+console.log(picked_heart);
 
 // On click Function for selecting a heart color
 const heartClick = (e) => {
     e.preventDefault();
 
+    console.log('I was clicked');
     for (let i = 0; i < picked_heart.length; i++) {
         picked_heart[i].classList.add('animated', 'bounce');
         console.log('I ran');
@@ -33,23 +32,23 @@ const clickCaught = (e) => {
     
 }
 
-
+picked_heart.addEventListener('click', heartClick);
 
 // Hard code for selecting heart color
-const red_heart = document.querySelector('#red-heart');
-red_heart.addEventListener('click', clickCaught);
+// const red_heart = document.querySelector('#red-heart');
+// red_heart.addEventListener('click', clickCaught);
 
-const orange_heart = document.querySelector('#orange-heart');
-orange_heart.addEventListener('click', clickCaught);
+// const orange_heart = document.querySelector('#orange-heart');
+// orange_heart.addEventListener('click', clickCaught);
 
-const yellow_heart = document.querySelector('#yellow-heart');
-yellow_heart.addEventListener('click', clickCaught);
+// const yellow_heart = document.querySelector('#yellow-heart');
+// yellow_heart.addEventListener('click', clickCaught);
 
-const blue_heart = document.querySelector('#blue-heart');
-blue_heart.addEventListener('click', clickCaught);
+// const blue_heart = document.querySelector('#blue-heart');
+// blue_heart.addEventListener('click', clickCaught);
 
-const green_heart = document.querySelector('#green-heart');
-green_heart.addEventListener('click', clickCaught);
+// const green_heart = document.querySelector('#green-heart');
+// green_heart.addEventListener('click', clickCaught);
 
 
 
@@ -71,7 +70,7 @@ const quotesArr = ['loveQuotes', 'danQuotes', 'emojiArr'];
 let quotesArrTotal = quotesArr.length;
 let randomArrIndex = Math.floor( random * quotesArrTotal);
 let randomArrParam = quotesArr[randomArrIndex]; 
-let strToVar = window[randomArrParam];
+// let strToVar = window[randomArrParam];
 
 console.log('I\'m the random param');
 console.log(randomArrParam);
@@ -97,11 +96,9 @@ const randomLoveQuotes = (randomArr) => {
     
     lovePtag.appendChild(document.createTextNode(randomMessage));
     
-    love_window.appendChild(lovePtag);
-    
-    
-    // love_window.appendChild(document.createTextNode(randomMessage));
+    love_window.appendChild(lovePtag);    
 }
+
 
 // eval turns the string into the array name rather than the string version of it
 console.log('=================');
@@ -114,16 +111,20 @@ console.log('=================');
 
 const loveQuoteAppend = (e) => {
     e.preventDefault();
-    
-    randomLoveQuotes(eval(randomArrParam));
     console.log('I\'m the heart button click');
 
-    //Creating dynamic elememts for love quotes
+    let clickCount = 0;
+    clickCount += 1;
 
-    // const lovePtag = document.createElement('p');
-    // lovePtag.className = 'loveQuoteDump';
-    // lovePtag.id = 'quoteDrop';
-    // lovePtag.appendChild(document.createTextNode(randomMessage));
+    if (clickCount <= 1) {
+        clickCount += 1;
+        randomLoveQuotes(eval(randomArrParam));
+    } 
+     else {
+        location.reload();
+    }
+    console.log(clickCount);
+
 }
 
 /*************************/
