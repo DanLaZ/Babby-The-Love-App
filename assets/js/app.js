@@ -54,10 +54,6 @@ picked_heart[4].addEventListener('click', heartClick_4);
 
 
 //*******Array Randomizer******
-console.log('===============');
-console.log('Random Array Sort');
-console.log('===============');
-
 
 let random = Math.random();
 
@@ -65,55 +61,34 @@ const quotesArr = ['loveQuotes', 'danQuotes', 'emojiArr'];
 let quotesArrTotal = quotesArr.length;
 let randomArrIndex = Math.floor( random * quotesArrTotal);
 let randomArrParam = quotesArr[randomArrIndex]; 
-// let strToVar = window[randomArrParam];
-
-console.log('I\'m the random param');
-console.log(randomArrParam);
-console.log('=================');
-
-// const love_window = document.querySelector('#love-window');
-// const lovePtag = document.createElement('p');
 
 //This Function gives a random index from any array.
 const randomLoveQuotes = (randomArr) => {
     let totalArr = randomArr.length;
     let randomIndex = Math.floor( random * totalArr);
     let randomMessage = randomArr[randomIndex];
-    randomArr = randomArrParam;
 
+    console.log(randomArrParam);
     console.log(randomMessage);
 
     //Creating dynamic elememts for love quotes
-    const love_window = document.querySelector('#love-window');
     const lovePtag = document.createElement('p');
     lovePtag.className = 'loveQuoteDump';
     lovePtag.id = 'quoteDrop';
-    
     lovePtag.appendChild(document.createTextNode(randomMessage));
-    
+    const love_window = document.querySelector('#love-window');
     love_window.appendChild(lovePtag);    
 }
-
-
-// eval turns the string into the array name rather than the string version of it
-console.log('=================');
-// randomLoveQuotes(eval(randomArrParam));
-// randomLoveQuotes(eval(randomArrParam));
-console.log('=================');
-
-
-
 
 const loveQuoteAppend = (e) => {
     e.preventDefault();
     console.log('I\'m the heart button click');
 
     let clickCount = 0;
-    clickCount += 1;
-
+    
     if (clickCount <= 1) {
-        clickCount += 1;
-        randomLoveQuotes(eval(randomArrParam));
+        clickCount++;
+        randomLoveQuotes(eval(randomArrParam)); // eval turns the string into the array name rather than the string version of it
     } 
      else {
         location.reload();
