@@ -9,54 +9,49 @@ const emojiArr = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🖤', '♥
 /*************************/
 
 
-const picked_heart = document.querySelectorAll('ul.heart-choices li.picked-heart');
-
-console.log(picked_heart);
-
 // On click Function for selecting a heart color
-const heartClick = (e) => {
-    e.preventDefault();
 
-    console.log('I was clicked');
-    for (let i = 0; i < picked_heart.length; i++) {
-        picked_heart[i].classList.add('animated', 'bounce');
-        console.log('I ran');
-    }
-    
+let picked_heart = document.querySelectorAll('ul.heart-choices li.picked-heart');
+
+picked_heart = Array.from(picked_heart);
+
+const heartClick_0 = (e) => {
+    e.preventDefault();
+    picked_heart[0].classList.add('animated', 'bounce');
+    setTimeout( () => {picked_heart[0].classList.remove('animated', 'bounce');}, 1000);
 }
 
-const clickCaught = (e) => {
+const heartClick_1 = (e) => {
     e.preventDefault();
-
-    console.log('I\'m the heart selector');
-    
+    picked_heart[1].classList.add('animated', 'bounce');
+    setTimeout( () => {picked_heart[1].classList.remove('animated', 'bounce');}, 1000);
 }
 
-picked_heart.addEventListener('click', heartClick);
+const heartClick_2 = (e) => {
+    e.preventDefault();
+    picked_heart[2].classList.add('animated', 'bounce');
+    setTimeout( () => {picked_heart[2].classList.remove('animated', 'bounce');}, 1000);
+}
 
-// Hard code for selecting heart color
-// const red_heart = document.querySelector('#red-heart');
-// red_heart.addEventListener('click', clickCaught);
+const heartClick_3 = (e) => {
+    e.preventDefault();
+    picked_heart[3].classList.add('animated', 'bounce');
+    setTimeout( () => {picked_heart[3].classList.remove('animated', 'bounce');}, 1000);
+}
 
-// const orange_heart = document.querySelector('#orange-heart');
-// orange_heart.addEventListener('click', clickCaught);
+const heartClick_4 = (e) => {
+    e.preventDefault();
+    picked_heart[4].classList.add('animated', 'bounce');
+    setTimeout( () => {picked_heart[4].classList.remove('animated', 'bounce');}, 1000);
+}
 
-// const yellow_heart = document.querySelector('#yellow-heart');
-// yellow_heart.addEventListener('click', clickCaught);
-
-// const blue_heart = document.querySelector('#blue-heart');
-// blue_heart.addEventListener('click', clickCaught);
-
-// const green_heart = document.querySelector('#green-heart');
-// green_heart.addEventListener('click', clickCaught);
+picked_heart[0].addEventListener('click', heartClick_0);
+picked_heart[1].addEventListener('click', heartClick_1);
+picked_heart[2].addEventListener('click', heartClick_2);
+picked_heart[3].addEventListener('click', heartClick_3);
+picked_heart[4].addEventListener('click', heartClick_4);
 
 
-
-// picked_heart.className = 'animated bounce infinite';
-
-// heartClick();
-
-// console.log(picked_heart);
 
 //*******Array Randomizer******
 console.log('===============');
