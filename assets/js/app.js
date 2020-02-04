@@ -77,8 +77,19 @@ const randomLoveQuotes = (randomArr) => {
     lovePtag.id = 'quoteDrop';
     lovePtag.appendChild(document.createTextNode(randomMessage));
     const love_window = document.querySelector('#love-window');
-    love_window.appendChild(lovePtag);    
+    love_window.appendChild(lovePtag);
+
+    const qouteNode = document.querySelectorAll('.loveQuoteDump');
+
+    if(qouteNode[1] !== undefined) {
+        qouteNode[0].remove();
+        console.log('A quote was removed');
+    }
+    else {
+        console.log('First Quote');
+    }
 }
+
 
 const loveQuoteAppend = (e) => {
     e.preventDefault();
