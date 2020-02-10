@@ -60,7 +60,7 @@ const quoteBuilder = (e) => {
       [danQuotes[i], danQuotes[j]] = [danQuotes[j], danQuotes[i]];
       
     }
-    console.log('hello');
+    console.log(danQuotes);
     
     //Creating dynamic elememts for love quotes
     const lovePtag = document.createElement('p');
@@ -70,13 +70,21 @@ const quoteBuilder = (e) => {
     const love_window = document.querySelector('#love-window');
     love_window.appendChild(lovePtag);
 
-    const qouteNode = document.querySelectorAll('.loveQuoteDump');
+    const quoteNode = document.querySelectorAll('.loveQuoteDump');
 
-    if(qouteNode[1] !== undefined) {
-        qouteNode[0].remove();
+
+
+    if(quoteNode[1] !== undefined) {
+        quoteNode[0].remove();
         console.log('A quote was removed');
-    }
-    else {
+        console.log(quoteNode[1].textContent.length);
+        if(quoteNode[1].textContent.length == 2) {
+            lovePtag.style = 'font-size: 190px;';
+        }
+    } else {
+        if(quoteNode[0].textContent.length == 2) {
+            lovePtag.style = 'font-size: 190px;';
+        }
         console.log('First Quote');
     }
     
