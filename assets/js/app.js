@@ -221,9 +221,3 @@ const quoteBuilder = (e) => {
     }
     
 }
-
-//Click Handler for heart button
-const displayLoveQuote = (e) => {
-    console.log('I\'m the heart button');
-    e.preventDefault();
-}
